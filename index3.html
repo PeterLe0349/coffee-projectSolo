@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Coffee Shop</title>
+</head>
+<body>
+<!--    Start Main Container-->
+<div class="container">
+    <h1 class="display-3 text-center">COFFEE</h1>
+    <hr>
+<!--    main row-->
+    <div class="row">
+        <!--       start left column-->
+        <div class="col-6">
+            <div class="row" id="coffeeDisplay">
+            </div>
+        </div><!--            end left column-->
+
+
+        <div class="col-6"> <!--       start right column-->
+<!--SELECT COFFEE BY RoAST-->
+            <form action="" id="formCoffee">
+                <select name="coffeetypes" id="coffeetypes">
+                    <option value="choose" selected>roast type</option>
+                    <option value="dark">dark</option>
+                    <option value="medium">medium</option>
+                    <option value="light">light</option>
+                </select>
+            </form>
+<!--SELECT COFFEE BY INPUT-->
+            <hr>
+            <h3>Display coffee by roast type</h3>
+            <form action="" id="formCoffee2">
+                <input type="text" placeholder="what type" id="inputBox"><br>
+
+            </form>
+<!--            ADD COFFEE-->
+            <hr>
+            <h3>Add Coffee</h3>
+            <div>
+                <input type="text" placeholder="enter new coffee" id="newCoffee" name="newCoffee"><br>
+                <input type="submit" id="subBtn">
+            </div>
+
+
+
+
+        </div><!--            end right column-->
+
+
+
+
+    </div><!--        end of main row-->
+
+
+
+
+
+
+
+</div> <!--END main container-->
+
+
+
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
