@@ -56,8 +56,8 @@ var coffees = [
 //
 // submitButton.addEventListener('click', updateCoffees);
 
-let coffeeMenu = document.getElementById("coffeeDisplay");
-let coffeeSelector = document.getElementById("coffeetypes");
+const coffeeMenu = document.getElementById("coffeeDisplay");
+const coffeeSelector = document.getElementById("coffeetypes");
 coffeeSelector.addEventListener("change", clickMe);
 
 function clickMe(){
@@ -75,17 +75,17 @@ function clickMe(){
 
 }
 
-let inputter = document.getElementById("inputBox");
+const inputter = document.getElementById("inputBox");
 inputter.addEventListener("input", getSpecificNames);
 
 function getSpecificNames(e){
+    let eText = e.target.value;
     coffeeMenu.innerHTML = "";
     resetIt();
-    let eText = e.target.value;
     let stringie = "";
     for(let i=0; i< coffees.length; i++){
-        let roastString = coffees[i].roast
-        if(  roastString.includes(eText)){
+        let roastString = coffees[i].name
+        if(  roastString.toLowerCase().includes(eText.toLowerCase())){
             stringie += "<div class=\"col-6    \">" + coffees[i].name + " <i>" + coffees[i].roast  +  "</i>"  +      "</div>" ;
         }
 
@@ -93,31 +93,19 @@ function getSpecificNames(e){
     coffeeMenu.innerHTML = stringie;
 }
 
-
-
-
-
-
-
-
-
-let newCoffee = document.getElementById("subBtn");
-newCoffee.addEventListener("click", addCoffee);
-
+//ADD COFFEE
+const formElem = document.getElementById("formCoffee3");
+formElem.addEventListener('submit', addCoffee);
 
 
 function addCoffee(){
-    resetIt();
-    let eText = document.getElementById("newCoffee").value;
-    console.log(eText);
-    coffees.push({id:coffees.length, name:eText, roast:"dark"});
+    event.preventDefault();
+    coffees.push({id:coffees.length, name:formElem.newCoffee.value, roast:formElem.coffeetypes2.value});
     let stringie = "";
     for(let i=0; i< coffees.length; i++){
-
         stringie += "<div class=\"col-6    \">" + coffees[i].name + " <i>" + coffees[i].roast  +  "</i>"  +      "</div>" ;
     }
-    tester.innerHTML = stringie;
-
+    coffeeMenu.innerHTML = stringie;
 
 }
 
@@ -140,11 +128,10 @@ function getNames(arr, typeName){
     }
     return stringie;
 }
-
-
-
-
-function start(){
+let input2 = document.getElementById("input2");
+input2.addEventListener("input", changer2);
+function changer2() {
+    document.getElementById("coffeeDisplay").innerHTML = input2.value;
 }
 
 
